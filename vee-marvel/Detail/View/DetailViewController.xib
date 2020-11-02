@@ -24,10 +24,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5f-IQ-zrG" userLabel="Container">
-                            <rect key="frame" x="0.0" y="8" width="414" height="461.5"/>
+                            <rect key="frame" x="0.0" y="8" width="414" height="673.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UPb-W9-PUa">
-                                    <rect key="frame" x="8" y="0.0" width="398" height="461.5"/>
+                                    <rect key="frame" x="8" y="0.0" width="398" height="633.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dZt-55-stU" userLabel="character image">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="200"/>
@@ -55,8 +55,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mQG-re-3yF" userLabel="Comics">
-                                            <rect key="frame" x="0.0" y="333.5" width="398" height="128"/>
+                                            <rect key="frame" x="0.0" y="333.5" width="398" height="300"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="300" id="kKj-UV-wpx"/>
+                                            </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mw0-Mm-NgA">
                                                 <size key="itemSize" width="128" height="128"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -69,7 +72,7 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="UPb-W9-PUa" secondAttribute="bottom" id="CWJ-P8-a0K"/>
+                                <constraint firstAttribute="bottom" secondItem="UPb-W9-PUa" secondAttribute="bottom" constant="40" id="CWJ-P8-a0K"/>
                                 <constraint firstAttribute="trailing" secondItem="UPb-W9-PUa" secondAttribute="trailing" constant="8" id="RwS-Gk-nsR"/>
                                 <constraint firstItem="UPb-W9-PUa" firstAttribute="top" secondItem="n5f-IQ-zrG" secondAttribute="top" id="j7b-RN-y7F"/>
                                 <constraint firstItem="UPb-W9-PUa" firstAttribute="leading" secondItem="n5f-IQ-zrG" secondAttribute="leading" constant="8" id="uHp-7e-KVk"/>
