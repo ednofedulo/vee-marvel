@@ -13,8 +13,27 @@ protocol DetailViewModelViewDelegate: AnyObject {
     func didFetchDataFail(sender: DetailViewModel)
 }
 
-struct DetailViewModel {
+class DetailViewModel {
     
-    weak var delegate: DetailViewModelViewDelegate?
+    var character:MarvelCharacter
+    var comics:[Comic]?
+    weak var viewDelegate: DetailViewModelViewDelegate?
+    lazy var service:DetailServiceProtocol = DetailService()
     
+    init(character:MarvelCharacter) {
+        self.character = character   
+    }
+    
+    /// fetch comics from the API
+    func fetchComics(){
+        self.service.getComics(from: self.character.comicList!.collectionURI!) { (data, error) in
+            guard error == nil else {
+                self.viewDelegate?.didFetchDataFail(sender: self)
+                return
+            }
+            
+            self.comics = data?.data?.results
+            self.viewDelegate?.didFetchDataSuccess(sender: self)
+        }
+    }
 }

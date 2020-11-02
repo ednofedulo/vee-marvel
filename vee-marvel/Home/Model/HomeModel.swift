@@ -9,5 +9,5 @@
 import Foundation
 
 struct HomeModel: Codable {
-    let characters: [MarvelCharacter]
+    var characters: [MarvelCharacter]?
 }

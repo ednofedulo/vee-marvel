@@ -21,17 +21,21 @@ class AppCoordinator: CoordinatorProtocol {
         self.navigationController = navigationController
     }
     
+    /// show the first view of the app
     func start() {
-        var viewModel = HomeViewModel()
+        let viewModel = HomeViewModel()
+        viewModel.coodinator = self
         let viewController = HomeTableViewController(viewModel: viewModel)
         viewModel.viewDelegate = viewController
         navigationController.pushViewController(viewController, animated: true)
     }
     
+    /// Navigate to detail screen
+    /// - Parameter character: Marvel character
     func showDetail(for character: MarvelCharacter) {
-        var detailViewModel = DetailViewModel()
+        let detailViewModel = DetailViewModel(character: character)
         let viewController = DetailViewController(viewModel: detailViewModel)
-        detailViewModel.delegate = viewController
+        detailViewModel.viewDelegate = viewController
         navigationController.pushViewController(viewController, animated: true)
     }
 }
